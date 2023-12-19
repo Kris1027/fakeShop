@@ -1,7 +1,7 @@
 export default function Navigation() {
   return (
     <nav>
-      <ul>
+      <ul className='flex gap-3'>
         <li>
           <a href='/'>Home</a>
         </li>
