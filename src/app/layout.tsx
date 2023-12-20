@@ -1,15 +1,15 @@
 "use client";
-// import { Inter } from 'next/font/google';
 import "./styles/globals.css";
+import { ThemeProvider } from "./contexts/themeContext";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import { ThemeProvider, useTheme } from "./contexts/themeContext";
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
 
-// const inter = Inter({ subsets: ['latin'] });
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
