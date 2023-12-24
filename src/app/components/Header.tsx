@@ -1,9 +1,9 @@
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "./ui/ThemeSwitcher";
 import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <header className="bg-dark px-4 py-2 text-light">
+    <header className="flex justify-between bg-light px-4 py-2 text-dark dark:bg-dark dark:text-light">
       <Logo />
       <ThemeSwitcher />
     </header>
