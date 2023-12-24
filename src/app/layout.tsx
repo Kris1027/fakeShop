@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Theme from "./components/styles/Theme";
+import ThemeProvider from "./components/styles/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "fakeShop",
@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Theme>
+        <ThemeProvider>
           <Header />
           {children}
           <Footer />
-        </Theme>
+        </ThemeProvider>
       </body>
     </html>
   );

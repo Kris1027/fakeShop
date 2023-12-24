@@ -1,4 +1,4 @@
-import ThemeSwitcher from "./ui/ThemeSwitcher";
+import ThemeSwitcher from "./styles/ThemeSwitcher";
 import Logo from "./Logo";
 
 export default function Header() {

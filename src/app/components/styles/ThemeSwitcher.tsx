@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import Button from "./Button";
+import Button from "../ui/Button";
 import { useEffect, useState } from "react";
 
 import { CiDark, CiSun } from "react-icons/ci";
