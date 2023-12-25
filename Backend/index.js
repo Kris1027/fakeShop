@@ -1,22 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const productRouter = require('./routes/products');
 
-const app = express();
+mongoose
+  .connect('mongodb://localhost:27017/fakeShop')
+  .then(() => console.log('Połączono z MongoDB'))
+  .catch((err) => console.error('Błąd podczas łączenia z MongoDB:', err));
 
-app.use(bodyParser.json());
-
-mongoose.connect('mongodb://localhost:27017/products', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+const productSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
+  description: String,
 });
 
-const db = mongoose.connection;
+const Product = mongoose.model('Product', productSchema);
 
-db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to Database'));
-
-app.use('/products', productRouter);
-
-app.listen(3000, () => console.log('Server Started'));
+Product.find()
+  .then((products) => console.log(products))
+  .catch((err) => console.error('Error reading products', err));
