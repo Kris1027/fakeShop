@@ -1,24 +1,10 @@
-import ProductNavButton from "./ProductNavButton";
+import { ProductProps } from "../products/page";
 
-interface ProductProps {
-  _id: string;
-  name: string;
-  price: number;
-  description: string;
-}
-
-export default function Product({
-  _id,
-  name,
-  price,
-  description,
-}: ProductProps) {
+export default function Product({ name, description }: ProductProps) {
   return (
     <div>
       <h1>{name}</h1>
-      <p>{price}</p>
       <p>{description}</p>
-      <ProductNavButton _id={_id} />
     </div>
   );
 }
