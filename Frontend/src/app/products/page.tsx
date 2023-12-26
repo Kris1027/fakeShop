@@ -6,7 +6,8 @@ export interface ProductProps {
   _id?: string;
   name: string;
   price: number;
-  description: string;
+  description?: string;
+  image: string;
 }
 
 export default function Products() {
@@ -41,10 +42,11 @@ export default function Products() {
   }
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-4 p-4">
       {products.map((prod) => (
         <Product
           key={prod._id}
+          image={prod.image}
           name={prod.name}
           price={prod.price}
           description={prod.description}

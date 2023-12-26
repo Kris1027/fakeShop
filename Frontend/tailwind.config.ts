@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#0000ff",
-        secondary: "#ff0000",
-        success: "#00ff00",
+        success: "#28965A",
+        successHover: "#2A6041",
         warning: "#ffff00",
         dark: "#1e1b4b",
         light: "#c7d2fe",

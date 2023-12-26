@@ -5,7 +5,11 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  children: ReactNode;
+  icon?: ReactNode;
+  className?: string;
+  size?: "sm" | "md" | "xl";
+  variant?: "primary" | "theme" | "buy";
+  label: string;
 }
 
 export default function Button({
@@ -13,6 +17,8 @@ export default function Button({
   className,
   variant,
   size,
+  icon,
+  label,
   ...props
 }: ButtonProps) {
   return (
@@ -20,7 +26,10 @@ export default function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {children}
+      <span className="flex items-center justify-center gap-1">
+        {icon}
+        {label}
+      </span>
     </button>
   );
 }
@@ -28,10 +37,9 @@ export default function Button({
 const buttonVariants = cva("rounded-lg px-4 py-2 cursor-pointer", {
   variants: {
     variant: {
-      primary: "bg-amber-700 text-amber-100",
-      secondary: "bg-blue-700 text-blue-100",
-      danger: "bg-red-700 text-red-100",
+      primary: "bg-blue-500 text-light",
       theme: "bg-transparent text-dark dark:text-light",
+      buy: "bg-success hover:bg-successHover text-white active:scale-95",
     },
     size: {
       sm: "text-sm",

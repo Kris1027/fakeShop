@@ -7,11 +7,11 @@ export default function Navigation() {
 
   return (
     <nav className="flex gap-4">
-      <Link className={pathname === "/" ? "text-secondary" : ""} href="/">
+      <Link className={pathname === "/" ? "text-red-500" : ""} href="/">
         Home
       </Link>
       <Link
-        className={pathname === "/products" ? "text-secondary" : ""}
+        className={pathname === "/products" ? "text-red-500" : ""}
         href="/products"
       >
         Products
