@@ -5,6 +5,7 @@ import Product from "../components/Product";
 export interface ProductProps {
   _id?: string;
   name: string;
+  price: number;
   description: string;
 }
 
@@ -45,6 +46,7 @@ export default function Products() {
         <Product
           key={prod._id}
           name={prod.name}
+          price={prod.price}
           description={prod.description}
         />
       ))}
