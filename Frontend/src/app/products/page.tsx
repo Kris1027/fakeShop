@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Product from "../components/Product";
+import Product from "../../../components/Product";
 
 export interface ProductProps {
   _id?: string;

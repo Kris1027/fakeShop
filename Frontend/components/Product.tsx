@@ -1,4 +1,4 @@
-import { ProductProps } from "../products/page";
+import { ProductProps } from "../src/app/products/page";
 import Button from "../ui/Button";
 import { GiShoppingCart } from "react-icons/gi";
 

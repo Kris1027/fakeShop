@@ -18,14 +18,20 @@ export default function ThemeSwitcher() {
   return (
     <div>
       {theme === "dark" && (
-        <Button variant="theme" size="xl" onClick={() => setTheme("light")}>
-          <CiDark />
-        </Button>
+        <Button
+          icon={<CiDark />}
+          variant="theme"
+          size="xl"
+          onClick={() => setTheme("light")}
+        />
       )}
       {theme === "light" && (
-        <Button variant="theme" size="xl" onClick={() => setTheme("dark")}>
-          <CiSun />
-        </Button>
+        <Button
+          icon={<CiSun />}
+          variant="theme"
+          size="xl"
+          onClick={() => setTheme("dark")}
+        />
       )}
     </div>
   );

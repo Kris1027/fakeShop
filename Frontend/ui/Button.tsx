@@ -9,7 +9,7 @@ interface ButtonProps
   className?: string;
   size?: "sm" | "md" | "xl";
   variant?: "primary" | "theme" | "buy";
-  label: string;
+  label?: string;
 }
 
 export default function Button({
