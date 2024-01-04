@@ -1,4 +1,4 @@
-import NavLink from "./NavLink";
+import NavLink from "../ui/NavLink";
 
 export default function Navigation() {
   return (

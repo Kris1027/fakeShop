@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import ThemeProvider from "../../styles/ThemeProvider";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ThemeProvider from "./styles/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "fakeShop",

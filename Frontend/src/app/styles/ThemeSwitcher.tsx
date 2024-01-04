@@ -21,7 +21,7 @@ export default function ThemeSwitcher() {
         <Button
           icon={<CiDark />}
           variant="theme"
-          size="xl"
+          size="big"
           onClick={() => setTheme("light")}
         />
       )}
@@ -29,7 +29,7 @@ export default function ThemeSwitcher() {
         <Button
           icon={<CiSun />}
           variant="theme"
-          size="xl"
+          size="big"
           onClick={() => setTheme("dark")}
         />
       )}

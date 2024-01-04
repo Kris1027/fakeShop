@@ -13,9 +13,7 @@ export default function NavLink({ children, href }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={
-        path.startsWith(href) ? "text-red-600" : "text-dark dark:text-light"
-      }
+      className={path.startsWith(href) ? "text-red-600" : undefined}
     >
       {children}
     </Link>

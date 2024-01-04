@@ -1,4 +1,4 @@
-import { ProductProps } from "../src/app/products/page";
+import { ProductProps } from "../products/page";
 import Button from "../ui/Button";
 import { GiShoppingCart } from "react-icons/gi";
 
@@ -8,7 +8,12 @@ export default function Product({ name, price, image }: ProductProps) {
       <img className="w-full" src={image} alt="main image of the product" />
       <h1 className="p-2 text-center text-3xl">{name}</h1>
       <p className="p-2 font-bold text-success">${price}</p>
-      <Button icon={<GiShoppingCart />} variant="buy" label="Add to Cart" />
+      <Button
+        icon={<GiShoppingCart />}
+        variant="buy"
+        size="big"
+        label="Add to cart"
+      />
     </div>
   );
 }

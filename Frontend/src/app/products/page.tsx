@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Product from "../../../components/Product";
+import Product from "../components/Product";
 
 export interface ProductProps {
   _id?: string;
@@ -42,7 +42,7 @@ export default function Products() {
   }
 
   return (
-    <div className="flex flex-wrap gap-4 p-4">
+    <div className="flex flex-wrap justify-center gap-4 p-4">
       {products.map((prod) => (
         <Product
           key={prod._id}
