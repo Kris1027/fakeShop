@@ -1,57 +1,23 @@
-"use client";
-import { useEffect, useState } from "react";
-import Product from "../components/Product";
+import Product from "./Product";
+import ProductsApi from "./ProductsApi";
 
-export interface ProductProps {
-  _id?: string;
-  name: string;
-  price: number;
-  description?: string;
-  image: string;
+async function getProducts() {
+  const products = await ProductsApi();
+
+  return products.map((prod) => (
+    <Product
+      key={prod._id}
+      name={prod.name}
+      price={prod.price}
+      image={prod.image}
+    />
+  ));
 }
 
-export default function Products() {
-  const [products, setProducts] = useState<ProductProps[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-
-  useEffect(() => {
-    fetch("http://localhost:3003/products")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
+export default function ProductsPage() {
+  const products = getProducts();
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
-      {products.map((prod) => (
-        <Product
-          key={prod._id}
-          image={prod.image}
-          name={prod.name}
-          price={prod.price}
-          description={prod.description}
-        />
-      ))}
-    </div>
+    <main className="flex flex-wrap justify-center gap-2 p-2">{products}</main>
   );
 }
