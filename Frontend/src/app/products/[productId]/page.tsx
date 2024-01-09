@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ProductProps, getProduct } from "../ProductsApi";
+import { type ProductProps, getProduct } from "../../lib/ProductsApi";
 import Button from "@/app/ui/Button";
 
 export default function DetailedProductPage({

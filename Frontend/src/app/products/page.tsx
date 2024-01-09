@@ -1,5 +1,5 @@
 import Product from "./Product";
-import ProductsApi from "./ProductsApi";
+import ProductsApi from "../lib/ProductsApi";
 
 async function getProducts() {
   const products = await ProductsApi();
