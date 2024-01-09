@@ -13,9 +13,9 @@ export default async function ProductsApi() {
   return products;
 }
 
-export async function getProduct(name: string) {
-  const res = await fetch(`http://localhost:3003/products/${name}`);
-  const product: ProductProps = await res.json();
+export async function getProduct(productId: string) {
+  const res = await fetch(`http://localhost:3003/products/${productId}`);
+  const product = await res.json();
 
   return product;
 }

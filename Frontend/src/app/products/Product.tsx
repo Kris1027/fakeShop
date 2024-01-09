@@ -9,7 +9,7 @@ export default function Product({ name, price, image, _id }: ProductProps) {
       key={_id}
       className="flex w-[300px] flex-col overflow-hidden rounded-xl bg-light text-dark dark:bg-dark dark:text-light"
     >
-      <Link href={`/products/${name}`}>
+      <Link href={`/products/${_id}`}>
         <img className="w-full" src={image} alt="main image of the product" />
         <h1 className="p-2 text-center text-3xl">{name}</h1>
         <p className="p-2 font-bold text-success">${price}</p>
