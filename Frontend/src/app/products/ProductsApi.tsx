@@ -12,3 +12,10 @@ export default async function ProductsApi() {
 
   return products;
 }
+
+export async function getProduct(name: string) {
+  const res = await fetch(`http://localhost:3003/products/${name}`);
+  const product: ProductProps = await res.json();
+
+  return product;
+}
