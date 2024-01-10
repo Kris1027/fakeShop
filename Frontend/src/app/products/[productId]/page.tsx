@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { type ProductProps, getProduct } from "../../lib/ProductsApi";
 import Button from "@/app/ui/Button";
 
@@ -18,7 +18,11 @@ export default function DetailedProductPage({
   }, [params.productId]);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
+  }
+
+  if (!product._id) {
+    return notFound();
   }
 
   return (
